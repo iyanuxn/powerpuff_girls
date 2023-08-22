@@ -9,4 +9,6 @@
 
 body {
   font-family: "GT Walsheim Pro";
+  width: 100vw;
+  overflow: hidden;
 }

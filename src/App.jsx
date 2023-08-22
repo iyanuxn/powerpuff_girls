@@ -24,6 +24,7 @@ const powerpuffData = [
 const App = () => {
   const [initial, setInitial] = useState("w-1/3");
   const [selected, setSelected] = useState(null);
+  const [textOpened, setTextOpened] = useState(null);
 
   const showDetails = (index) => {
     if (selected === index) {
@@ -48,7 +49,14 @@ const App = () => {
           onClick={() => showDetails(index)}
         >
           <img src={item.img} className="absolute w-60" />
-          <b className="text-white text-6xl">{item.name}</b>
+          <b
+            className={`
+          text-white text-6xl
+          ${selected === index ? "mt-72 text-9xl" : ""}
+          `}
+          >
+            {item.name}
+          </b>
         </div>
       ))}
     </div>
