@@ -1,4 +1,3 @@
-import React from "react";
 import CN from "../assets/cn.svg";
 import { FaRegUser } from "react-icons/fa";
 
