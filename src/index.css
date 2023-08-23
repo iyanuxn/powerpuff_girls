@@ -12,3 +12,18 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
+@keyframes radialreveal {
+  0% {
+    transform: scale(0);
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 0;
+  }
+}
+
+.radialreveal {
+  animation: radialreveal 1s ease-in-out;
+}
