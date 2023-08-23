@@ -16,14 +16,14 @@ body {
 @keyframes radialreveal {
   0% {
     transform: scale(0);
-    border-radius: 50%;
+    clip-path: circle(0% at 50% 50%);
   }
   100% {
     transform: scale(1);
-    border-radius: 0;
+    clip-path: circle(100% at 50% 50%);
   }
 }
 
 .radialreveal {
-  animation: radialreveal 1s ease-in-out;
+  animation: radialreveal 0.5s ease-in-out;
 }
