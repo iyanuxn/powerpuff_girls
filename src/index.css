@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* importing my custom font */
 @font-face {
   font-family: "GT Walsheim Pro";
   src: url("./assets/fonts/GTWalsheimPro-Regular.ttf");
@@ -13,6 +14,11 @@ body {
   overflow: hidden;
 }
 
+.radialreveal {
+  animation: radialreveal 0.5s ease-in-out;
+}
+
+/* animation sequence for radialreveal */
 @keyframes radialreveal {
   0% {
     transform: scale(0);
@@ -22,13 +28,9 @@ body {
   50% {
     clip-path: circle(20% at 50% 50%);
   }
-  
+
   100% {
     transform: scale(1);
     clip-path: circle(100% at 50% 50%);
   }
-}
-
-.radialreveal {
-  animation: radialreveal 0.5s ease-in-out;
 }

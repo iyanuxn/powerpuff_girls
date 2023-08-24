@@ -8,6 +8,7 @@ import "./index.css";
 const Index = () => {
   const [loading, setLoading] = useState(true);
 
+  // The useEffect hook in React handles side effects in functional components, here is used to set a timeout to change the loading state after 4.5 seconds.
   useEffect(() => {
     const loadingScreenTimeout = setTimeout(() => {
       setLoading(false);
@@ -20,9 +21,11 @@ const Index = () => {
 
   return (
     <React.StrictMode>
+      {/* Conditional rendering of the app right after the loading state is changed */}
       {loading ? (
         <LoadingScreen />
       ) : (
+        // radialreveal is the class for the animation
         <div className="radialreveal">
           <Navbar />
           <App />

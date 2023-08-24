@@ -3,6 +3,7 @@ import BUTTERCUP from "./assets/buttercup.png";
 import BLOSSOM from "./assets/blossom.png";
 import BUBBLE from "./assets/bubble.png";
 
+// This is an array of objects that stores data about each Powerpuff Girl.
 const powerpuffData = [
   {
     name: "BUTTERCUP",
@@ -22,20 +23,22 @@ const powerpuffData = [
 ];
 
 const App = () => {
-  const [initial, setInitial] = useState("w-1/3");
+  // State hooks to set initial sizes
+  const [initialWidth, setInitialWidth] = useState("w-1/3");
   const [initialTextSize, setInitialTextSize] = useState("text-6xl");
   const [selected, setSelected] = useState(null);
   const [initialImageSize, setInitialImageSize] = useState("w-60");
 
+// Callback function to enlarge or shrink the details of the powerpuff girl selected based on the index
   const showDetails = (index) => {
     if (selected === index) {
       setSelected(null);
-      setInitial("w-1/3");
+      setInitialWidth("w-1/3");
       setInitialTextSize("text-6xl");
       setInitialImageSize("w-60");
     } else {
       setSelected(index);
-      setInitial("w-10");
+      setInitialWidth("w-10");
       setInitialTextSize("text-lg");
       setInitialImageSize("w-10");
     }
@@ -43,13 +46,14 @@ const App = () => {
 
   return (
     <div className="h-screen w-full flex justify-center items-center">
+      {/* powerpuff girls array is mapped into the divs rather than hardcoding them */}
       {powerpuffData.map((item, index) => (
         <div
           key={index}
           className={`flex flex-col justify-center items-center h-screen py-40 px-16 cursor-pointer ${
             item.color
           } transition-all duration-500 ease-in-out ${
-            selected === index ? "w-full" : initial
+            selected === index ? "w-full" : initialWidth
           }`}
           onClick={() => showDetails(index)}
         >
@@ -63,7 +67,7 @@ const App = () => {
           <b
             className={`
           text-white ${initialTextSize} transition-all duration-500 ease-in-out
-          ${selected === index ? "mt-72 text-8xl" : ""}
+          ${selected === index ? "mt-72 text-9xl" : ""}
           `}
           >
             {item.name}
