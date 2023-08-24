@@ -29,7 +29,7 @@ const App = () => {
   const [selected, setSelected] = useState(null);
   const [initialImageSize, setInitialImageSize] = useState("w-60");
 
-// Callback function to enlarge or shrink the details of the powerpuff girl selected based on the index
+  // Callback function to enlarge or shrink the details of the powerpuff girl selected based on the index
   const showDetails = (index) => {
     if (selected === index) {
       setSelected(null);
@@ -66,8 +66,8 @@ const App = () => {
           />
           <b
             className={`
-          text-white ${initialTextSize} transition-all duration-500 ease-in-out
-          ${selected === index ? "mt-72 text-9xl" : ""}
+          text-white transition-all duration-500 ease-in-out
+          ${selected === index ? "mt-72 text-9xl" : initialTextSize}
           `}
           >
             {item.name}
